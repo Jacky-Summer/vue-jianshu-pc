@@ -1,44 +1,42 @@
 <template>
-    <div>
-        <nav class="nav-wrapper">
-            <div class="width-limit">
-                <router-link to='/' class="logo"><img src="../../assets/img/logo.png" alt="简书"></router-link>
-                <router-link to='/' class="btn-right"><i class="icon-write iconfont">&#xe60e;</i>写文章</router-link>
-                <router-link to='/' class="sign-up">注册</router-link>
-                <router-link to='/' class="sign-in">登录</router-link>
-                <div class="diamond-wrapper">
-                    <router-link to='/' class="diamond">
-                        <img src="../../assets/img/diamond.png" alt="" class="img-diamond">
-                    </router-link>
-                </div>
-                <div class="style-mode">
-                    <div class="style-mode-btn">
-                        <i class="icon-mode iconfont">&#xe636;</i>
-                    </div>
-                </div>
-                <div class="menu-container">
-                    <div class="nav-bar">
-                        <ul class="navbar-nav">
-                            <li class="tab">
-                                <router-link to='/' class="tab-item active">
-                                    <i class="icon-menu iconfont">&#xe786;</i>
-                                    <span class="menu-text">首页</span>
-                                </router-link>
-                            </li>
-                            <li class="tab">
-                                <router-link to='/' class="tab-item">
-                                    <i class="icon-menu iconfont">&#xe666;</i>
-                                    <span class="menu-text">下载App</span>     
-                                </router-link>
-                            </li>
-                        </ul>
-                        <header-search></header-search>
-                    </div>
-                </div>
-                
+    <nav class="nav-wrapper">
+        <div class="width-limit">
+            <router-link to='/' class="logo"><img src="../../assets/img/logo.png" alt="简书"></router-link>
+            <router-link to='/' class="btn-right"><i class="icon-write iconfont">&#xe60e;</i>写文章</router-link>
+            <router-link to='/' class="sign-up">注册</router-link>
+            <router-link to='/' class="sign-in">登录</router-link>
+            <div class="diamond-wrapper">
+                <router-link to='/' class="diamond">
+                    <img src="../../assets/img/diamond.png" alt="" class="img-diamond">
+                </router-link>
             </div>
-        </nav>
-    </div>
+            <div class="style-mode">
+                <div class="style-mode-btn">
+                    <i class="icon-mode iconfont">&#xe636;</i>
+                </div>
+            </div>
+            <div class="menu-container">
+                <div class="nav-bar">
+                    <ul class="navbar-nav">
+                        <li class="tab">
+                            <router-link to='/' class="tab-item active">
+                                <i class="icon-menu iconfont">&#xe786;</i>
+                                <span class="menu-text">首页</span>
+                            </router-link>
+                        </li>
+                        <li class="tab">
+                            <router-link to='/' class="tab-item">
+                                <i class="icon-menu iconfont">&#xe666;</i>
+                                <span class="menu-text">下载App</span>     
+                            </router-link>
+                        </li>
+                    </ul>
+                    <header-search></header-search>
+                </div>
+            </div>
+            
+        </div>
+    </nav>
 </template>
 
 <script>
@@ -64,6 +62,8 @@ export default {
     background-color #fff
     border 1px solid #f0f0f0
     margin-bottom 20px
+    box-sizing border-box
+    z-index 99
     .width-limit
         min-width 768px
         max-width 1440px
@@ -123,13 +123,9 @@ export default {
                 .icon-mode
                     font-size 22px
         .menu-container
-            width 992px
-            margin-right auto
-            margin-left auto
-            padding-left 15px
-            padding-right 15px
             box-sizing border-box
             height $navHeight
+            container()
             .nav-bar
                 .navbar-nav
                     float left
