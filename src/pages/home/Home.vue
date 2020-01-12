@@ -4,7 +4,7 @@
       <List :articleList="articleList"></List>
     </div>
     <div class="home-right">
-      <Recommend></Recommend>
+      <Recommend :list="recommendList"></Recommend>
       <Advertisement></Advertisement>
       <Writer></Writer>
     </div>
@@ -21,7 +21,8 @@ export default {
   name: 'Home',
   data () {
     return {
-      articleList: []
+      articleList: [],
+      recommendList: []
     }
   },
   components: {
@@ -38,6 +39,7 @@ export default {
           if(res.data && res.data.success) {
             const data = res.data.data
             this.articleList = data.articleList
+            this.recommendList = data.recommendList
           }
         })
     }
