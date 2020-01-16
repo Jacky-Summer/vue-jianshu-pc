@@ -56,6 +56,7 @@ export default {
 @import '~styles/mixins.styl'
 .container
   margin-top 86px
+  overflow hidden
   container()
   .home-left
     float left
