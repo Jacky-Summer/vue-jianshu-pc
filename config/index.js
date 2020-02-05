@@ -17,6 +17,13 @@ module.exports = {
         pathRewrite: {
           '^/api': '/static/mock'
         }
+      },
+      "/detail": {
+        target: 'https://www.jianshu.com',
+        changeOrigin: true, 
+        pathRewrite: {
+          '^/detail': '/'
+        }
       }
     },
 

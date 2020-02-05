@@ -8,11 +8,15 @@
         <div class="list-container">
             <ul>
                 <li class="list-item" v-for="article in articleList" :key="article.object.data.id">
-                    <router-link to='/' class="wrap-img have-img">
+                    <router-link 
+                        :to="'/detail/' + article.object.data.slug"
+                        class="wrap-img have-img" 
+                        v-if="article.object.data.list_image_url"
+                    >
                         <img :src="article.object.data.list_image_url" alt="">
                     </router-link>
                     <div class="content" :class="{ 'have-img': article.object.data.list_image_url }">
-                        <router-link to='/' class="title">{{ article.object.data.title }}</router-link>
+                        <router-link :to="'/detail/' + article.object.data.slug" class="title">{{ article.object.data.title }}</router-link>
                         <p class="abstract">{{ article.object.data.public_abbr }}</p>
                         <div class="meta">
                             <span class="reward"><i class="iconfont icon-diamond">&#xe63d;</i> {{ article.object.data.total_rewards_count }}</span>
