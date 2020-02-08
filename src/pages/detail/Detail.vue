@@ -1,7 +1,7 @@
 <template>
   <div class="detail">
     <div class="detail-left">
-      <Content></Content>
+      <Content :article="data"></Content>
       <Comment></Comment>
     </div>
     <div class="detail-right">
@@ -21,7 +21,7 @@ export default {
     name: 'Detail',
     data() {
       return {
-        article: Object
+        data: {}
       }
     },
     components: {
@@ -35,8 +35,8 @@ export default {
         axios.get('/detail/asimov/p/' + this.$route.params.slug)
           .then(res => {
             if(res.status === 200) {
-              this.article = res.data
-              console.log(this.article)
+              this.data = res.data
+              console.log(this.data)
             }
           })
       }
@@ -45,14 +45,16 @@ export default {
       this.getDetailInfo()
     },
     mounted() {
-      document.body.style.backgroundColor = "#f9f9f9";
+      // document.body.style.backgroundColor = "#f9f9f9";
     }
 }
 </script>
 
 <style lang="stylus" scoped>
 @import '~styles/mixins.styl'
+@import '~styles/variables.styl'
 .detail
+  color $articleText
   overflow hidden
   padding-top 66px
   container()
