@@ -1,6 +1,6 @@
-# y
+# vue仿简书页面
 
-> imitate jianshu website
+为了熟悉vue开发模式，模仿简书网站PC端网页，完成了基本页面
 
 ## Build Setup
 
